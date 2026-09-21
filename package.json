@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/harinireddylingala56-ship-it/sample_mern_app12#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "express": "^5.2.1",
     "mongoose": "^9.10.1"
   }
