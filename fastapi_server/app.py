@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 from models import Student,Staff
 from databse import student_collection,staff_collection
+from routes.student import student_router
+from routes.staff import staff_router
 app=FastAPI()
+app.include_router(student_router)
+app.include_router(staff_router)
 #convert mongodb document into json format
 def student_details(Student):
     return{
