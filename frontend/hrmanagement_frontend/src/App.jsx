@@ -8,7 +8,8 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Services from './pages/Services'
-
+import AdminLogin from './pages/AdminLogin'
+import AdminHome from './pages/AdminHome'
 
 function App() {
   return (
@@ -16,10 +17,12 @@ function App() {
       <Header />
 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/services" element={<Services />} />
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/about" element={<About></About>}></Route>
+        <Route path="/contact" element={<Contact></Contact>}></Route>
+        <Route path="/services" element={<Services></Services>}></Route>
+        <Route path="/adminlogin" element={<AdminLogin></AdminLogin>}></Route>
+        <Route path="/adminhome" element={<AdminHome></AdminHome>}></Route>
       </Routes>
 
       <Footer />
