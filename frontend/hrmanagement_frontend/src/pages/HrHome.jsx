@@ -1,7 +1,10 @@
 function HrHome() {
+    //JSON.stringfy=>convert data into JSON format
+    //JSON.parse=>convert JSON format to string
+    let currentuser = JSON.parse(localStorage.getItem("currentuser"));
     return (
         <div>
-            <h1>HrHome page</h1>
+            <h1>Welcome {currentuser.name}</h1>
         </div>
     )
 }

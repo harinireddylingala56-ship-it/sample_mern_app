@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -11,15 +10,22 @@ function Login() {
     let handleLogin = async (event) => {
         event.preventDefault();
 
-        // Admin login
-        if (email === "admin@gmail.com" && password === "12345") {
+        try {
+            // Admin login
+            if (email === "admin@gmail.com" && password === "admin") {
+                localStorage.setItem(
+                    "currentuser",
+                    JSON.stringify({
+                        name: "admin",
+                        role: "admin"
+                    })
+                );
 
-            // Navigate to admin home
-            navigate("/adminhome");
+                navigate("/adminhome");
+                return;
+            }
 
-        } else {
-
-            // Check employee credentials from database
+            // HR / Employee login
             let req = await fetch(
                 "http://localhost:3000/api/emp/login",
                 {
@@ -34,16 +40,30 @@ function Login() {
                 }
             );
 
-            let data = await req.text();
+            let data = await req.json();
 
-            console.log(data);
-            if (data.user.role == "HR") {
-                navigate("/hrhome")
+            console.log("Login response:", data);
 
-            } else {
-                navigate("/emphome")
-
+            if (!req.ok || !data.user || !data.user.role) {
+                console.error("Login failed:", data);
+                return;
             }
+
+            // Store user details
+            localStorage.setItem(
+                "currentuser",
+                JSON.stringify(data.user)
+            );
+
+            // Navigate directly without popup
+            if (data.user.role.toUpperCase() === "HR") {
+                navigate("/hrhome");
+            } else {
+                navigate("/emphome");
+            }
+
+        } catch (error) {
+            console.error("Login error:", error);
         }
     };
 
@@ -52,27 +72,27 @@ function Login() {
             <h1>Login Page</h1>
 
             <form onSubmit={handleLogin}>
-
                 <input
                     type="email"
-                    onChange={(e) => setEmail(e.target.value)}
                     value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter EmailID"
+                    required
                 />
 
                 <br />
 
                 <input
                     type="password"
-                    onChange={(e) => setPassword(e.target.value)}
                     value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     placeholder="Enter Password"
+                    required
                 />
 
                 <br />
 
                 <button type="submit">Login</button>
-
             </form>
         </div>
     );
