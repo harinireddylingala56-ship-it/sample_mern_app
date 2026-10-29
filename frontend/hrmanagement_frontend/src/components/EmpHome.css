@@ -1,0 +1,114 @@
+/* EmpHome.css */
+
+/* Main Employee Dashboard */
+.emphome-container {
+    min-height: 80vh;
+    width: 100%;
+    padding: 50px 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg,
+            #ecfeff,
+            #dbeafe,
+            #f8fafc);
+
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Employee Welcome Card */
+.emphome-container h1 {
+    width: 100%;
+    max-width: 850px;
+    box-sizing: border-box;
+
+    padding: 75px 35px;
+    margin: 0;
+
+    text-align: center;
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+
+    color: #ffffff;
+
+    background: linear-gradient(135deg,
+            #164e63,
+            #155e75,
+            #1d4ed8);
+
+    border-radius: 25px;
+    border-bottom: 6px solid #67e8f9;
+
+    box-shadow: 0 18px 45px rgba(8, 145, 178, 0.2);
+
+    animation: employeeFadeIn 0.8s ease-out;
+
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.emphome-container h1:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 55px rgba(8, 145, 178, 0.28);
+}
+
+/* Entrance Animation */
+@keyframes employeeFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .emphome-container {
+        min-height: 70vh;
+        padding: 35px 18px;
+    }
+
+    .emphome-container h1 {
+        padding: 55px 25px;
+        font-size: 34px;
+        border-radius: 20px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .emphome-container {
+        min-height: 65vh;
+        padding: 25px 14px;
+    }
+
+    .emphome-container h1 {
+        padding: 40px 16px;
+        font-size: 27px;
+        border-radius: 16px;
+        border-bottom-width: 4px;
+        overflow-wrap: anywhere;
+    }
+
+    .emphome-container h1:hover {
+        transform: none;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .emphome-container h1 {
+        animation: none;
+        transition: none;
+    }
+}

@@ -1,0 +1,43 @@
+/* Footer.css */
+
+footer {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 22px 15px;
+
+    background: linear-gradient(135deg, #141e30, #243b55);
+    color: #f8fafc;
+
+    text-align: center;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+
+    border-top: 3px solid #0ea5e9;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.08);
+
+    transition: background 0.3s ease;
+}
+
+/* Hover Effect */
+footer:hover {
+    background: linear-gradient(135deg, #1e293b, #334e68);
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 20px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    footer {
+        padding: 16px 10px;
+        font-size: 12px;
+        letter-spacing: 0.3px;
+    }
+}

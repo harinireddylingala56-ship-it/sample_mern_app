@@ -1,0 +1,88 @@
+/* About.css */
+
+/* About Page Container */
+.about-container {
+    min-height: 70vh;
+    padding: 60px 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg,
+            #f0f9ff,
+            #e0e7ff,
+            #f8fafc);
+
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* About Card */
+.about-container h1 {
+    width: 100%;
+    max-width: 850px;
+    box-sizing: border-box;
+
+    padding: 65px 30px;
+    margin: 0;
+
+    text-align: center;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.4;
+
+    color: #ffffff;
+    background: linear-gradient(135deg,
+            #141e30,
+            #243b55,
+            #0f766e);
+
+    border-radius: 24px;
+    border-bottom: 6px solid #0ea5e9;
+
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.18);
+
+    transition: transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Hover Effect */
+.about-container h1:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.25);
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .about-container {
+        min-height: 60vh;
+        padding: 40px 20px;
+    }
+
+    .about-container h1 {
+        padding: 45px 20px;
+        border-radius: 18px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .about-container {
+        min-height: 50vh;
+        padding: 25px 14px;
+    }
+
+    .about-container h1 {
+        padding: 35px 15px;
+        font-size: 28px;
+        letter-spacing: 0.3px;
+        border-radius: 14px;
+        border-bottom-width: 4px;
+    }
+
+    .about-container h1:hover {
+        transform: none;
+    }
+}

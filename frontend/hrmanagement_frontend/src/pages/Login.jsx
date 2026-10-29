@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import "../components/Login.css";
 
 function Login() {
     let [email, setEmail] = useState("");
@@ -68,7 +69,7 @@ function Login() {
     };
 
     return (
-        <div>
+        <div className="login-container">
             <h1>Login Page</h1>
 
             <form onSubmit={handleLogin}>

@@ -1,0 +1,241 @@
+/* Home.css */
+
+/* Main carousel container */
+#carouselExample {
+    width: 92%;
+    max-width: 1400px;
+    margin: 35px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    background: #0f172a;
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.22);
+}
+
+/* Carousel image container */
+#carouselExample .carousel-inner {
+    border-radius: 24px;
+}
+
+/* Carousel images */
+#carouselExample .carousel-item img {
+    display: block;
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+}
+
+/* Subtle image zoom */
+#carouselExample .carousel-item.active img {
+    animation: imageFadeIn 0.8s ease;
+}
+
+@keyframes imageFadeIn {
+    from {
+        opacity: 0.75;
+        transform: scale(1.025);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Dark overlay for controls visibility */
+#carouselExample.carousel-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.03) 50%,
+            rgba(0, 0, 0, 0.45) 100%);
+    pointer-events: none;
+    border-radius: 24px;
+}
+
+/* Overlay controls */
+#carouselExample .carousel-overlay-controls {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    pointer-events: none;
+}
+
+/* Previous and next button container */
+#carouselExample .carousel-overlay-controls>div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+    pointer-events: none;
+}
+
+/* Carousel navigation buttons */
+#carouselExample .btn-icon {
+    width: 48px;
+    height: 48px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 50%;
+    backdrop-filter: blur(8px);
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: auto;
+}
+
+/* Button hover */
+#carouselExample .btn-icon:hover {
+    background: #0ea5e9;
+    border-color: #0ea5e9;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(14, 165, 233, 0.35);
+}
+
+/* Arrow icons */
+#carouselExample .carousel-icon-prev,
+#carouselExample .carousel-icon-next {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #1e293b;
+    border-right: 3px solid #1e293b;
+}
+
+#carouselExample .carousel-icon-prev {
+    transform: rotate(-135deg);
+    margin-left: 5px;
+}
+
+#carouselExample .carousel-icon-next {
+    transform: rotate(45deg);
+    margin-right: 5px;
+}
+
+#carouselExample .btn-icon:hover .carousel-icon-prev,
+#carouselExample .btn-icon:hover .carousel-icon-next {
+    border-color: #ffffff;
+}
+
+/* Carousel indicators */
+#carouselExample .carousel-indicators {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 0 auto 5px;
+    pointer-events: auto;
+}
+
+#carouselExample .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.65);
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+#carouselExample .carousel-indicators button.active {
+    width: 30px;
+    border-radius: 10px;
+    background-color: #38bdf8;
+}
+
+/* Tablet responsive */
+@media screen and (max-width: 992px) {
+    #carouselExample {
+        width: 94%;
+        margin: 25px auto;
+        border-radius: 20px;
+    }
+
+    #carouselExample .carousel-item img {
+        height: 400px;
+    }
+
+    #carouselExample .carousel-inner,
+    #carouselExample.carousel-overlay::after {
+        border-radius: 20px;
+    }
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 576px) {
+    #carouselExample {
+        width: 95%;
+        margin: 18px auto;
+        border-radius: 14px;
+    }
+
+    #carouselExample .carousel-item img {
+        height: 250px;
+        object-fit: cover;
+    }
+
+    #carouselExample .carousel-inner,
+    #carouselExample.carousel-overlay::after {
+        border-radius: 14px;
+    }
+
+    #carouselExample .carousel-overlay-controls {
+        padding: 12px;
+    }
+
+    #carouselExample .carousel-overlay-controls>div:first-child {
+        margin-bottom: 12px;
+    }
+
+    #carouselExample .btn-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    #carouselExample .carousel-icon-prev,
+    #carouselExample .carousel-icon-next {
+        width: 9px;
+        height: 9px;
+        border-width: 2px;
+    }
+
+    #carouselExample .carousel-indicators {
+        gap: 6px;
+        margin-bottom: 3px;
+    }
+
+    #carouselExample .carousel-indicators button {
+        width: 7px;
+        height: 7px;
+    }
+
+    #carouselExample .carousel-indicators button.active {
+        width: 22px;
+    }
+}
+
+/* Very small mobile screens */
+@media screen and (max-width: 360px) {
+    #carouselExample .carousel-item img {
+        height: 200px;
+    }
+
+    #carouselExample .btn-icon {
+        width: 32px;
+        height: 32px;
+    }
+}

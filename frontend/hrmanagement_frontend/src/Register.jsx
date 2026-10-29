@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./components/Register.css";
 function Register() {
     let [name, setName] = useState("");
     let [email, setEmail] = useState("");
@@ -22,7 +23,7 @@ function Register() {
         }
     }
 
-    return (<div>
+    return (<div className="register-container">
         <h1>Register</h1>
         <form onSubmit={handleRegister}>
             <input type="text" onChange={(event) => setName(event.target.value)} value={name} placeholder="Enter name"></input><br></br>

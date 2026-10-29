@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "../components/Contact.css"
 function Contact() {
     let [name, setName] = useState("")
     let [age, setAge] = useState(18)
@@ -9,7 +10,7 @@ function Contact() {
         console.log(name)
     }
     return (
-        <div>
+        <div className="contact-container">
             <h1> Contact page called </h1>
             <form onSubmit={RegisterForm}>
                 <input type="text" value={name} onChange={(event) => setName(event.target.value)} placeholder="Enter your name"></input><br></br>

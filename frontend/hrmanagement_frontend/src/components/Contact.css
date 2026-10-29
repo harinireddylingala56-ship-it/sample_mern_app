@@ -1,0 +1,190 @@
+/* Contact.css */
+
+/* Main Contact Page */
+.contact-container {
+    min-height: 75vh;
+    padding: 45px 20px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(135deg,
+            #f0f9ff,
+            #e0e7ff,
+            #f8fafc);
+
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* Page Heading */
+.contact-container h1 {
+    margin: 0 0 28px;
+    text-align: center;
+
+    color: #1e3a8a;
+    font-size: clamp(28px, 4vw, 38px);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* Registration Form Card */
+.contact-container form {
+    width: 100%;
+    max-width: 480px;
+    box-sizing: border-box;
+
+    padding: 35px;
+    background: #ffffff;
+
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+
+    box-shadow: 0 12px 35px rgba(30, 58, 138, 0.12);
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Input Fields */
+.contact-container input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 14px 16px;
+
+    font-family: inherit;
+    font-size: 15px;
+    color: #1e293b;
+
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+
+    outline: none;
+    transition: border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+}
+
+/* Placeholder */
+.contact-container input::placeholder {
+    color: #94a3b8;
+}
+
+/* Input Focus */
+.contact-container input:focus {
+    background: #ffffff;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* Register Button */
+.contact-container form button {
+    width: 100%;
+    padding: 14px;
+
+    margin-top: 5px;
+
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: #ffffff;
+
+    border: none;
+    border-radius: 10px;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+/* Button Hover */
+.contact-container form button:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e3a8a);
+    box-shadow: 0 7px 18px rgba(37, 99, 235, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Button Active */
+.contact-container form button:active {
+    transform: scale(0.98);
+}
+
+/* Submitted Values */
+.contact-container p {
+    width: 100%;
+    max-width: 410px;
+    box-sizing: border-box;
+
+    margin: 8px 0 0;
+    padding: 12px 16px;
+
+    background: #ffffff;
+    border-left: 4px solid #0ea5e9;
+    border-radius: 7px;
+
+    color: #334155;
+    font-size: 15px;
+    overflow-wrap: anywhere;
+
+    box-shadow: 0 3px 10px rgba(15, 23, 42, 0.05);
+}
+
+/* Tablet */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        padding: 35px 18px;
+    }
+
+    .contact-container form {
+        max-width: 450px;
+        padding: 28px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 480px) {
+    .contact-container {
+        min-height: 70vh;
+        padding: 25px 14px;
+    }
+
+    .contact-container h1 {
+        margin-bottom: 22px;
+        font-size: 28px;
+    }
+
+    .contact-container form {
+        padding: 22px 18px;
+        gap: 13px;
+        border-radius: 15px;
+    }
+
+    .contact-container input {
+        padding: 13px 12px;
+        font-size: 14px;
+    }
+
+    .contact-container form button {
+        padding: 13px;
+        font-size: 15px;
+    }
+
+    .contact-container p {
+        font-size: 14px;
+    }
+}
+
+/* Accessibility */
+.contact-container input:focus-visible,
+.contact-container form button:focus-visible {
+    outline: 3px solid #38bdf8;
+    outline-offset: 3px;
+}

@@ -1,0 +1,148 @@
+/* Header.css */
+
+/* Main Header */
+.header {
+    width: 100%;
+    min-height: 75px;
+    padding: 15px 5%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px 25px;
+
+    background: linear-gradient(135deg, #141e30, #243b55);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+
+    font-family: "Segoe UI", Arial, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation Links */
+.header a {
+    color: #f8fafc;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 10px 14px;
+    border-radius: 8px;
+
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Hover Effect */
+.header a:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.14);
+    transform: translateY(-2px);
+}
+
+/* Active Page Link */
+.header a.active {
+    background: #0ea5e9;
+    color: white;
+}
+
+/* Login and Register Containers */
+.header>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Buttons */
+.header button {
+    border: none;
+    outline: none;
+
+    padding: 11px 20px;
+    border-radius: 8px;
+
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+/* Button Hover */
+.header button:hover {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    box-shadow: 0 5px 12px rgba(220, 38, 38, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Keyboard Accessibility */
+.header a:focus-visible,
+.header button:focus-visible {
+    outline: 3px solid #38bdf8;
+    outline-offset: 3px;
+}
+
+/* Tablet Responsive */
+@media screen and (max-width: 900px) {
+    .header {
+        padding: 14px 3%;
+        gap: 10px;
+    }
+
+    .header a {
+        font-size: 14px;
+        padding: 9px 11px;
+    }
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 600px) {
+    .header {
+        position: relative;
+        padding: 15px 12px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+    }
+
+    .header>a,
+    .header>div {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .header>a {
+        text-align: center;
+    }
+
+    .header>div {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+    }
+
+    .header>div a {
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .header button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .header a:hover,
+    .header button:hover {
+        transform: none;
+    }
+}
